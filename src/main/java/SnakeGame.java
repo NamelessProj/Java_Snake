@@ -13,26 +13,6 @@ import java.util.Random;
  * This class handles the game logic, rendering, and user input for the Snake game.
  */
 public class SnakeGame extends JPanel implements ActionListener, KeyListener {
-    /**
-     * Tile class representing a single tile on the game board.
-     */
-    private class Tile {
-        public int x;
-        public int y;
-
-        /**
-         * Constructor for Tile class.
-         * @param x The x-coordinate of the tile.
-         * @param y The y-coordinate of the tile.
-         */
-        Tile(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-
-
     private final int BOARD_WIDTH;
     private final int BOARD_HEIGHT;
     private final int TILE_SIZE = 25;
