@@ -39,7 +39,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
      * @param boardWidth The width of the game board.
      * @param boardHeight The height of the game board.
      */
-    public SnakeGame(int boardWidth, int boardHeight) {
+    SnakeGame(int boardWidth, int boardHeight) {
         this.BOARD_WIDTH = boardWidth;
         this.BOARD_HEIGHT = boardHeight;
 
