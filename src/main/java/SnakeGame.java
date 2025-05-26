@@ -22,14 +22,14 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     // Snake
     private final Color SNAKE_HEAD_COLOR = new Color(40, 150, 40);
     private final Color SNAKE_BODY_COLOR = Color.GREEN;
-    private Tile snakehead;
-    private ArrayList<Tile> snakeBody;
+    private final Tile snakehead;
+    private final ArrayList<Tile> snakeBody;
 
     // Food
-    private Tile food;
+    private final Tile food;
 
     // Game logic
-    private Timer gameLoop;
+    private final Timer gameLoop;
     private int velocityX;
     private int velocityY;
     private boolean gameOver = false;
