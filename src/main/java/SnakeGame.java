@@ -22,7 +22,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     // Snake
     private final Color SNAKE_HEAD_COLOR = new Color(40, 150, 40);
     private final Color SNAKE_BODY_COLOR = Color.GREEN;
-    private final Tile snakehead;
+    private final Tile snakeHead;
     private final ArrayList<Tile> snakeBody;
 
     // Food
@@ -50,7 +50,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
         random = new Random();
 
-        snakehead = new Tile(5, 5);
+        snakeHead = new Tile(5, 5);
         snakeBody = new ArrayList<>();
 
         food = new Tile(10, 10);
@@ -98,7 +98,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         // Draw the snake head
         g.setColor(SNAKE_HEAD_COLOR);
         // g.fillRect(snakehead.x * TILE_SIZE, snakehead.y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-        g.fill3DRect(snakehead.x * TILE_SIZE, snakehead.y * TILE_SIZE, TILE_SIZE, TILE_SIZE, true);
+        g.fill3DRect(snakeHead.x * TILE_SIZE, snakeHead.y * TILE_SIZE, TILE_SIZE, TILE_SIZE, true);
 
         // Draw score
         int score = snakeBody.size();
@@ -135,7 +135,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
      */
     public void move() {
         // Eat food
-        if (collision(snakehead, food)) {
+        if (collision(snakeHead, food)) {
             snakeBody.add(new Tile(food.x, food.y));
             placeFood();
         }
@@ -145,8 +145,8 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         for (int i = snakeBodySize; i >= 0; i--) {
             Tile snakePart = snakeBody.get(i);
             if (i == 0) {
-                snakePart.x = snakehead.x;
-                snakePart.y = snakehead.y;
+                snakePart.x = snakeHead.x;
+                snakePart.y = snakeHead.y;
             } else {
                 Tile previousPart = snakeBody.get(i - 1);
                 snakePart.x = previousPart.x;
@@ -155,20 +155,20 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         }
 
         // Snake Head
-        snakehead.x += velocityX;
-        snakehead.y += velocityY;
+        snakeHead.x += velocityX;
+        snakeHead.y += velocityY;
 
         // Game over conditions
         // Check for snake head collision with himself
         for (Tile snakePart : snakeBody) {
-            if (collision(snakehead, snakePart)) {
+            if (collision(snakeHead, snakePart)) {
                 gameOver = true;
                 break;
             }
         }
         // Check for snake head collision with walls
-        if (snakehead.x * TILE_SIZE < 0 || snakehead.x * TILE_SIZE > BOARD_WIDTH ||
-           snakehead.y * TILE_SIZE < 0 || snakehead.y * TILE_SIZE > BOARD_HEIGHT) {
+        if (snakeHead.x * TILE_SIZE < 0 || snakeHead.x * TILE_SIZE > BOARD_WIDTH ||
+           snakeHead.y * TILE_SIZE < 0 || snakeHead.y * TILE_SIZE > BOARD_HEIGHT) {
             gameOver = true;
         }
     }
