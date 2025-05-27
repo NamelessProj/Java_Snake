@@ -29,7 +29,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     private final Tile food;
 
     // Game logic
-    private final Timer gameLoop;
+    private final Timer GAMELOOP;
     private int velocityX;
     private int velocityY;
     private boolean gameOver = false;
@@ -59,8 +59,8 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         velocityX = 0;
         velocityY = 1;
 
-        gameLoop = new Timer(100, this);
-        gameLoop.start();
+        GAMELOOP = new Timer(100, this);
+        GAMELOOP.start();
     }
 
     /**
@@ -178,7 +178,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         move();
         this.repaint();
         if (gameOver) {
-            gameLoop.stop();
+            GAMELOOP.stop();
         }
     }
 
