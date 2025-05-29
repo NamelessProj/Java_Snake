@@ -1,4 +1,13 @@
-# Sname Game
+<p align="center">
+<img src="https://img.shields.io/badge/Java-^23.0.2-orange" alt="Java version"/>
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/github/license/NamelessProj/Java_Snake" alt="licence"/>
+<img src="https://img.shields.io/github/repo-size/NamelessProj/Java_Snake" alt="repo size"/>
+</p>
+
+# Snake Game
 A simple Snake game written in Java using Swing.
 
 ## Features
