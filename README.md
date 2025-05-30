@@ -22,11 +22,11 @@ A simple Snake game written in Java using Swing.
 ## Build and Run
 1. Clone the repository:
    ```bash
-   git clone
+   git clone https://github.com/NamelessProj/Java_Snake.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd sname-game
+   cd Java_Snake
    ```
 3. Compile the Java files:
    ```bash
